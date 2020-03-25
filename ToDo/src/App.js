@@ -39,14 +39,14 @@ class App extends React.Component{
 
     render(){
         return(
-            <div className="container border border-primary my-5">
-                <h1 className="text-center mt-3 font-weight-bold text-danger"><u>TODO APP</u></h1>
+            <div className="container border shadow-lg my-5">
+                <h1 className="text-center mt-3 font-weight-bold text-"><u>TO-DO APP</u></h1>
                 <Add addfunc={this.formSubmit}/>
                 {this.state.isdata && <Todolist data={this.state.tododata}
                                                 handleDone={this.performDone}
                                                 handleDel={this.performDel}
                                                 label="Todo's"/>}
-            {this.state.isdata && <button onClick={()=>this.setState({showcompleted:!this.state.showcompleted})} className="btn btn-primary mt-4 mb-2 offset-3 offset-lg-5">Show Completed Todo's</button>}
+            {this.state.isdata && <button onClick={()=>this.setState({showcompleted:!this.state.showcompleted})} className="btn btn-primary mt-4 mb-4 offset-3 offset-lg-5">Show Completed Todo's</button>}
                 
             {this.state.showcompleted && <Todolist data={this.state.tododata.filter(element=>element.isdone)}
                                                     handleDone={this.performDone}
